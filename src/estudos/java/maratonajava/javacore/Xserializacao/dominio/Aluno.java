@@ -7,7 +7,6 @@ import java.io.Serial;
 import java.io.Serializable;
 
 public class Aluno implements Serializable {
-    @Serial
     private static final long serialVersionUID = 739959230178355185L;
 
     private Long id;
