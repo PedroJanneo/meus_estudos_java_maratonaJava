@@ -3,7 +3,6 @@ package estudos.java.maratonajava.javacore.Xserializacao.dominio;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serial;
 import java.io.Serializable;
 
 public class Aluno implements Serializable {
