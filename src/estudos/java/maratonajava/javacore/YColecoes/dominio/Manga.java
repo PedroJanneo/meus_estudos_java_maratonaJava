@@ -10,6 +10,7 @@ public class Manga implements Comparable<Manga>{ // implementando a interface pa
     private Long id;
     private String nome;
     private double preco;
+    private int quantidade;
 
     public Manga(Long id, String nome, double preco) {
         Objects.requireNonNull(id,"ID nao pode ser nulo"); // garantir que nao sao nulos + mensagem personalizada ( lancar excessao)
@@ -19,8 +20,21 @@ public class Manga implements Comparable<Manga>{ // implementando a interface pa
         this.preco = preco;
     }
 
+
+    public Manga(Long id, String nome, double preco, int quantidade) {
+       this(id,nome,preco);
+        this.quantidade = quantidade;
+    }
+
     public Long getId() {
         return id;
+    }
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
     public void setId(Long id) {
@@ -43,18 +57,17 @@ public class Manga implements Comparable<Manga>{ // implementando a interface pa
         this.preco = preco;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Manga manga = (Manga) o;
-        return Double.compare(preco, manga.preco) == 0 && Objects.equals(id, manga.id) && Objects.equals(nome, manga.nome);
+        return Objects.equals(id, manga.id) && Objects.equals(nome, manga.nome);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome, preco);
+        return Objects.hash(id, nome);
     }
 
     @Override
@@ -63,6 +76,7 @@ public class Manga implements Comparable<Manga>{ // implementando a interface pa
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", preco=" + preco +
+                ", quantidade=" + quantidade +
                 '}';
     }
 
