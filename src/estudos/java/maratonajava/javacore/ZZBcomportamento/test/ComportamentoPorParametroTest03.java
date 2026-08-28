@@ -22,7 +22,7 @@ public class ComportamentoPorParametroTest03 {
             }
         });
 
-        List<Car> greenCar2 = filter(cars, car -> car.getColor().equals("Green"));
+        List<Car> greenCar2 = filter(cars,car -> car.getColor().equals("Green"));
         List<Car> yearBeforeCar = filter(cars, car -> car.getYear() < 2016);
 
         System.out.println(greenCars);
@@ -30,7 +30,7 @@ public class ComportamentoPorParametroTest03 {
         System.out.println(yearBeforeCar);
         List<Integer> nums = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
         System.out.println(filter(nums, num ->num %2==0));
-        // nums (lista de numeros) / num (variavel) -> num%2==0 (condição)
+        // nums (lista de numeros / tipo) / num (variavel) -> num%2==0 (condição)
 
 
     }
